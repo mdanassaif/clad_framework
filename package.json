@@ -1,6 +1,6 @@
 {
   "name": "clad-css",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "A modern, lightweight CSS framework with customizable components",
   "main": "dist/clad.min.css",
   "style": "dist/clad.min.css",
