@@ -1,42 +1,79 @@
 const sass = require('sass');
-const fs = require('fs');
+const fs = require('fs-extra');
 const postcss = require('postcss');
 const cssnano = require('cssnano');
 const autoprefixer = require('autoprefixer');
 const path = require('path');
 
+// Check if watch mode is enabled
+const watchMode = process.argv.includes('--watch');
 
-const inputFile = path.join(__dirname, 'src', 'clad.scss');
-const outputFile = path.join(__dirname, 'dist', 'clad.min.css');
+// Source and destination paths
+const srcDir = path.join(__dirname, 'src');
+const distDir = path.join(__dirname, 'dist');
+const mainScssFile = path.join(srcDir, 'clad.scss');
+const outputCssFile = path.join(distDir, 'clad.min.css');
+const outputFullCssFile = path.join(distDir, 'clad.css');
 
-// Ensure the dist exists in main directory
-if (!fs.existsSync(path.dirname(outputFile))) {
-  fs.mkdirSync(path.dirname(outputFile), { recursive: true });
+// Ensure the dist directory exists
+fs.ensureDirSync(distDir);
+
+// Function to compile SCSS
+function compileSass() {
+  console.log('Compiling SCSS...');
+  
+  try {
+    // Compile to full version (expanded)
+    const fullResult = sass.renderSync({
+      file: mainScssFile,
+      outputStyle: 'expanded',
+      sourceMap: true,
+      sourceMapContents: true,
+      outFile: outputFullCssFile
+    });
+    
+    // Write full version
+    fs.writeFileSync(outputFullCssFile, fullResult.css);
+    if (fullResult.map) {
+      fs.writeFileSync(`${outputFullCssFile}.map`, fullResult.map);
+    }
+    
+    // Process with PostCSS for minified version
+    postcss([autoprefixer, cssnano])
+      .process(fullResult.css, { 
+        from: mainScssFile, 
+        to: outputCssFile,
+        map: { inline: false }
+      })
+      .then(result => {
+        fs.writeFileSync(outputCssFile, result.css);
+        if (result.map) {
+          fs.writeFileSync(`${outputCssFile}.map`, result.map.toString());
+        }
+        console.log(`✅ Build successful! Output: ${outputCssFile} and ${outputFullCssFile}`);
+      });
+      
+  } catch (error) {
+    console.error('❌ Error compiling SCSS:', error.message);
+    if (error.file) {
+      console.error(`File: ${error.file}`);
+      console.error(`Line: ${error.line}, Column: ${error.column}`);
+    }
+  }
 }
 
-// Compile SCSS to CSS
-sass.render({
-  file: inputFile,
-  outputStyle: 'expanded'
-}, (error, result) => {
-  if (error) {
-    console.error('SASS compilation error:', error);
-    return;
-  }
+// Initial compilation
+compileSass();
 
-  // Processing CSS with PostCSS  
-  postcss([autoprefixer, cssnano])
-    .process(result.css, { from: undefined })
-    .then(result => {
-      fs.writeFile(outputFile, result.css, (err) => {
-        if (err) {
-          console.error('Error writing file:', err);
-        } else {
-          console.log('Build completed successfully. Output:', outputFile);
-        }
-      });
-    })
-    .catch(err => {
-      console.error('PostCSS processing error:', err);
-    });
-});
+// Watch mode
+if (watchMode) {
+  console.log('Watching for changes...');
+  
+  // Watch the src directory for changes
+  fs.watch(srcDir, { recursive: true }, (eventType, filename) => {
+    if (filename && filename.endsWith('.scss')) {
+      console.log(`File ${filename} changed. Rebuilding...`);
+      compileSass();
+    }
+  });
+}

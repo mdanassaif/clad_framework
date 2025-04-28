@@ -1,0 +1,266 @@
+// Typography
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: var(--clad-spacer-3);
+  font-weight: var(--clad-font-weight-bold);
+  line-height: var(--clad-line-height-sm);
+  color: inherit;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+// Responsive typography
+@include clad-media-breakpoint-up(sm) {
+  h1 {
+    font-size: 3rem;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+  }
+  
+  h3 {
+    font-size: 2rem;
+  }
+}
+
+// Paragraphs
+p {
+  margin-top: 0;
+  margin-bottom: var(--clad-spacer-3);
+}
+
+// Text helpers
+.clad-lead {
+  font-size: 1.25rem;
+  font-weight: var(--clad-font-weight-light);
+  line-height: 1.6;
+}
+
+.clad-small, small {
+  font-size: 80%;
+  font-weight: var(--clad-font-weight-normal);
+}
+
+.clad-mark, mark {
+  padding: 0.2em;
+  background-color: #fcf8e3;
+}
+
+// Lists
+ol, 
+ul, 
+dl {
+  margin-top: 0;
+  margin-bottom: var(--clad-spacer-3);
+  padding-left: var(--clad-spacer-4);
+}
+
+ol ol, 
+ul ul, 
+ol ul, 
+ul ol {
+  margin-bottom: 0;
+}
+
+// Description lists
+dl {
+  margin-bottom: var(--clad-spacer-3);
+}
+
+dt {
+  font-weight: var(--clad-font-weight-bold);
+  margin-bottom: var(--clad-spacer-1);
+}
+
+dd {
+  margin-bottom: var(--clad-spacer-2);
+  margin-left: 0;
+}
+
+// Blockquotes
+blockquote {
+  margin: 0 0 var(--clad-spacer-3);
+  padding: var(--clad-spacer-3) var(--clad-spacer-4);
+  border-left: 5px solid var(--clad-light);
+  font-size: 1.25rem;
+  
+  footer {
+    display: block;
+    font-size: 80%;
+    color: #6c757d;
+    
+    &::before {
+      content: "\2014\00A0"; // em dash, nbsp
+    }
+  }
+}
+
+// Code
+pre {
+  display: block;
+  font-size: 87.5%;
+  color: #212529;
+  margin-top: 0;
+  margin-bottom: var(--clad-spacer-3);
+  overflow: auto;
+  
+  code {
+    font-size: inherit;
+    color: inherit;
+    word-break: normal;
+    padding: 0;
+  }
+}
+
+code {
+  font-size: 87.5%;
+  color: #e83e8c;
+  word-wrap: break-word;
+  padding: 0.2em 0.4em;
+  background-color: #f8f9fa;
+  border-radius: var(--clad-border-radius-sm);
+}
+
+kbd {
+  padding: 0.2em 0.4em;
+  font-size: 87.5%;
+  color: #fff;
+  background-color: #212529;
+  border-radius: var(--clad-border-radius-sm);
+  
+  kbd {
+    padding: 0;
+    font-size: 100%;
+    font-weight: var(--clad-font-weight-bold);
+  }
+}
+
+// Text alignment
+.clad-text-left {
+  text-align: left !important;
+}
+
+.clad-text-right {
+  text-align: right !important;
+}
+
+.clad-text-center {
+  text-align: center !important;
+}
+
+.clad-text-justify {
+  text-align: justify !important;
+}
+
+// Text transforms
+.clad-text-lowercase {
+  text-transform: lowercase !important;
+}
+
+.clad-text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.clad-text-capitalize {
+  text-transform: capitalize !important;
+}
+
+// Font weights
+.clad-font-weight-light {
+  font-weight: var(--clad-font-weight-light) !important;
+}
+
+.clad-font-weight-normal {
+  font-weight: var(--clad-font-weight-normal) !important;
+}
+
+.clad-font-weight-bold {
+  font-weight: var(--clad-font-weight-bold) !important;
+}
+
+// Text colors
+.clad-text-primary {
+  color: var(--clad-primary) !important;
+}
+
+.clad-text-secondary {
+  color: var(--clad-secondary) !important;
+}
+
+.clad-text-accent {
+  color: var(--clad-accent) !important;
+}
+
+.clad-text-success {
+  color: var(--clad-success) !important;
+}
+
+.clad-text-danger {
+  color: var(--clad-danger) !important;
+}
+
+.clad-text-warning {
+  color: var(--clad-warning) !important;
+}
+
+.clad-text-info {
+  color: var(--clad-info) !important;
+}
+
+.clad-text-light {
+  color: var(--clad-light) !important;
+}
+
+.clad-text-dark {
+  color: var(--clad-dark) !important;
+}
+
+.clad-text-muted {
+  color: rgba(0, 0, 0, .6) !important;
+}
+
+.clad-text-white {
+  color: #fff !important;
+}
+
+// Text ellipsis
+.clad-text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Text wrapping
+.clad-text-nowrap {
+  white-space: nowrap !important;
+}
+
+.clad-text-break {
+  word-wrap: break-word !important;
+  word-break: break-word !important; // For IE & Edge legacy
+}
