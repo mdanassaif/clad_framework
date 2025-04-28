@@ -1,0 +1,42 @@
+# Source files
+scripts/
+
+# Development configs
+.editorconfig
+.eslintrc
+.stylelintrc
+.prettierrc
+.git
+.github
+.gitignore
+
+# Docs
+docs/
+
+# Tests
+tests/
+coverage/
+*.test.js
+
+# Build configs
+postcss.config.js
+babel.config.js
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencies
+node_modules/
+
+# Misc
+.DS_Store
+Thumbs.db
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local

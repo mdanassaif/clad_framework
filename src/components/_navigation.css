@@ -1,0 +1,237 @@
+/**
+ * FluidCSS - Navigation
+ * Navigation component styles
+ */
+
+/* Nav */
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+/* Nav Item */
+.nav-item {
+  margin-bottom: 0;
+}
+
+/* Nav Link */
+.nav-link {
+  display: block;
+  padding: var(--space-2) var(--space-4);
+  color: var(--c-primary-600);
+  text-decoration: none;
+  transition: color var(--transition-fast) var(--ease-default);
+}
+
+.nav-link:hover {
+  color: var(--c-primary-800);
+}
+
+.nav-link.active {
+  color: var(--c-primary-700);
+  font-weight: var(--fw-medium);
+}
+
+.nav-link.disabled {
+  color: var(--c-neutral-400);
+  pointer-events: none;
+  cursor: default;
+}
+
+/* Tabs */
+.nav-tabs {
+  border-bottom: var(--border-width-thin) solid var(--c-border);
+}
+
+.nav-tabs .nav-item {
+  margin-bottom: calc(var(--border-width-thin) * -1);
+}
+
+.nav-tabs .nav-link {
+  border: var(--border-width-thin) solid transparent;
+  border-top-left-radius: var(--border-radius-md);
+  border-top-right-radius: var(--border-radius-md);
+}
+
+.nav-tabs .nav-link:hover {
+  border-color: var(--c-neutral-200) var(--c-neutral-200) var(--c-border);
+}
+
+.nav-tabs .nav-link.active {
+  color: var(--c-primary-700);
+  background-color: var(--c-surface);
+  border-color: var(--c-border) var(--c-border) var(--c-surface);
+}
+
+/* Pills */
+.nav-pills .nav-link {
+  border-radius: var(--border-radius-md);
+}
+
+.nav-pills .nav-link.active {
+  color: white;
+  background-color: var(--c-primary-600);
+}
+
+/* Fill and Justify */
+.nav-fill .nav-item {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.nav-justified .nav-item {
+  flex-basis: 0;
+  flex-grow: 1;
+  text-align: center;
+}
+
+/* Navbar */
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-6);
+}
+
+/* Navbar Brand */
+.navbar-brand {
+  display: inline-block;
+  padding-top: var(--space-2);
+  padding-bottom: var(--space-2);
+  margin-right: var(--space-4);
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-semibold);
+  line-height: inherit;
+  color: var(--c-text);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Navbar Nav */
+.navbar-nav {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.navbar-nav .nav-link {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+/* Navbar Collapse */
+.navbar-collapse {
+  flex-basis: 100%;
+  flex-grow: 1;
+  align-items: center;
+}
+
+/* Navbar Toggler */
+.navbar-toggler {
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--fs-lg);
+  line-height: 1;
+  background-color: transparent;
+  border: var(--border-width-thin) solid var(--c-border);
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+}
+
+/* Responsive Navbar */
+@media (min-width: 768px) {
+  .navbar-expand-md {
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+  }
+  
+  .navbar-expand-md .navbar-nav {
+    flex-direction: row;
+  }
+  
+  .navbar-expand-md .navbar-nav .nav-link {
+    padding-right: var(--space-4);
+    padding-left: var(--space-4);
+  }
+  
+  .navbar-expand-md .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+  }
+  
+  .navbar-expand-md .navbar-toggler {
+    display: none;
+  }
+}
+
+/* Navbar Variants */
+.navbar-light {
+  background-color: var(--c-neutral-100);
+}
+
+.navbar-light .navbar-brand,
+.navbar-light .navbar-nav .nav-link {
+  color: var(--c-text);
+}
+
+.navbar-light .navbar-toggler {
+  border-color: var(--c-neutral-300);
+}
+
+.navbar-dark {
+  background-color: var(--c-neutral-800);
+}
+
+.navbar-dark .navbar-brand,
+.navbar-dark .navbar-nav .nav-link {
+  color: white;
+}
+
+.navbar-dark .navbar-toggler {
+  border-color: var(--c-neutral-600);
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  padding: var(--space-2) 0;
+  margin-bottom: var(--space-4);
+  list-style: none;
+}
+
+.breadcrumb-item {
+  display: flex;
+  color: var(--c-text-light);
+}
+
+.breadcrumb-item a {
+  color: var(--c-primary-600);
+  text-decoration: none;
+}
+
+.breadcrumb-item a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb-item + .breadcrumb-item {
+  padding-left: var(--space-2);
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  display: inline-block;
+  padding-right: var(--space-2);
+  color: var(--c-neutral-400);
+  content: "/";
+}
+
+.breadcrumb-item.active {
+  color: var(--c-text);
+  font-weight: var(--fw-medium);
+}

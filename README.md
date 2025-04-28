@@ -1,175 +1,79 @@
-# CLAD CSS Framework
+# Clad Framework
 
-A modern, lightweight CSS framework with customizable components.
+A modern, utility-first CSS framework designed for flexibility and ease of use.
 
 ## Features
 
-- Flexbox and CSS Grid based layout system
-- Fully customizable with CSS variables
-- Dark mode support
-- Mobile-first responsive design
-- Comprehensive component library
-- Accessibility-focused
-- Modern animations and transitions
-- Utility classes for rapid development
+- Utility-first approach with intuitive class naming conventions
+- Responsive design system with customizable breakpoints
+- Modern color system with CSS variables for easy theming
+- Flexible layout utilities with grid and flexbox support
+- Lightweight core with tree-shakable components
+- Dark mode support built-in from the start
+- Comprehensive documentation
 
 ## Installation
 
 ```bash
-npm install clad-css
+npm install clad-framework
 ```
 
-## Usage
+## Quick Start
 
-### Import the CSS
+### 1. Include the CSS
 
 ```html
-<!-- In your HTML -->
-<link rel="stylesheet" href="node_modules/clad-css/dist/clad.min.css">
+<!-- Option 1: Import in your CSS/SCSS file -->
+@import 'clad-framework';
+
+<!-- Option 2: Import in JavaScript -->
+import 'clad-framework';
 ```
 
-Or import in your JavaScript:
-
-```js
-// Using a bundler (webpack, vite, etc.)
-import 'clad-css';
-```
-
-### Basic Example
+### 2. Start using the utilities
 
 ```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CLAD CSS Example</title>
-  <link rel="stylesheet" href="path/to/clad.min.css">
-</head>
-<body>
-  <div class="clad-container">
-    <h1 class="clad-text-primary">Hello, CLAD CSS!</h1>
-    
-    <div class="clad-card">
-      <div class="clad-card-body">
-        <h5 class="clad-card-title">Card Title</h5>
-        <p class="clad-card-text">This is a simple card example using CLAD CSS.</p>
-        <button class="clad-btn clad-btn-primary">Action Button</button>
-      </div>
-    </div>
-  </div>
-</body>
-</html>
+<div class="flex items-center justify-between p-4 bg-primary-100">
+  <div class="text-lg font-bold text-primary-900">Clad Framework</div>
+  <button class="px-4 py-2 text-white bg-primary-600 rounded-md hover:bg-primary-700 transition-colors">
+    Get Started
+  </button>
+</div>
 ```
 
 ## Customization
 
-CLAD CSS uses CSS variables for easy theming. You can override these variables in your own CSS:
+Clad Framework is designed to be easily customizable through CSS variables. Override the default variables to match your design system:
 
 ```css
 :root {
   /* Primary color */
-  --clad-primary-hue: 220;
-  --clad-primary-saturation: 90%;
-  --clad-primary-lightness: 45%;
+  --c-primary-500: #4f46e5; /* Your brand color */
   
-  /* Change font family */
-  --clad-font-family-sans-serif: 'Roboto', sans-serif;
+  /* Font family */
+  --f-body: 'Your Font', sans-serif;
   
-  /* Adjust border radius */
-  --clad-border-radius: 0.5rem;
+  /* Adjust other variables as needed */
 }
 ```
 
-## Dark Mode
+## Documentation
 
-CLAD CSS includes automatic dark mode based on user preference (`prefers-color-scheme`). You can also manually apply dark mode with a class:
-
-```html
-<body class="clad-dark-mode">
-  <!-- Your content -->
-</body>
-```
-
-## Components
-
-CLAD CSS includes a wide range of components:
-
-- Buttons
-- Cards
-- Forms
-- Navbar
-- Tables
-- Alerts
-- Badges
-- Modals
-- Tooltips
-- Dropdowns
-- Progress bars
-- And more...
-
-## Layout System
-
-### Container
-
-```html
-<div class="clad-container">
-  <!-- Content here -->
-</div>
-
-<!-- Fluid container -->
-<div class="clad-container-fluid">
-  <!-- Content here -->
-</div>
-```
-
-### Grid
-
-```html
-<div class="clad-row">
-  <div class="clad-col-12 clad-col-md-6 clad-col-lg-4">
-    <!-- Column content -->
-  </div>
-  <div class="clad-col-12 clad-col-md-6 clad-col-lg-4">
-    <!-- Column content -->
-  </div>
-  <div class="clad-col-12 clad-col-md-6 clad-col-lg-4">
-    <!-- Column content -->
-  </div>
-</div>
-```
-
-### CSS Grid
-
-```html
-<div class="clad-grid-container">
-  <div class="clad-grid-item-md-6">
-    <!-- Grid item -->
-  </div>
-  <div class="clad-grid-item-md-6">
-    <!-- Grid item -->
-  </div>
-</div>
-```
-
-## Utilities
-
-CLAD CSS provides utility classes for:
-
-- Spacing (margin/padding)
-- Typography
-- Colors
-- Flexbox
-- Display
-- Position
-- Borders
-- Shadows
-- And more...
+For complete documentation, see the [docs](./docs) directory.
 
 ## Browser Support
 
-CLAD CSS supports all modern browsers and IE11+.
+Clad Framework supports all modern browsers and is compatible with the latest versions of:
+
+- Chrome
+- Firefox
+- Safari
+- Edge
 
 ## License
 
 MIT
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.

@@ -1,31 +1,47 @@
 {
-  "name": "clad-css",
+  "name": "clad-framework",
   "version": "1.0.5",
-  "description": "A modern, lightweight CSS framework with customizable components",
-  "main": "dist/clad.min.css",
-  "style": "dist/clad.min.css",
+  "description": "A modern, utility-first CSS framework",
+  "main": "src/clad.css",
+  "module": "src/clad.css",
   "files": [
-    "dist",
     "src"
   ],
   "scripts": {
-    "build": "node build.js",
-    "dev": "node build.js --watch"
+    "build": "node scripts/build.js",
+    "dev": "nodemon --watch src --exec npm run build",
+    "docs": "node scripts/build-docs.js",
+    "lint": "stylelint \"src/**/*.css\"",
+    "test": "jest",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "css",
     "framework",
+    "utility",
     "responsive",
-    "front-end",
-    "ui"
+    "design-system"
   ],
-  "author": "",
+  "author": "Your Name",
   "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "^10.4.18",
-    "cssnano": "^6.0.3",
-    "fs-extra": "^11.2.0",
-    "postcss": "^8.4.35",
-    "sass": "^1.71.1"
-  }
+    "autoprefixer": "^10.4.14",
+    "cssnano": "^6.0.1",
+    "fs-extra": "^11.1.1",
+    "jest": "^29.5.0",
+    "nodemon": "^2.0.22",
+    "postcss": "^8.4.24",
+    "postcss-cli": "^10.1.0",
+    "postcss-import": "^15.1.0",
+    "postcss-nested": "^6.0.1",
+    "postcss-preset-env": "^8.4.2",
+    "rimraf": "^5.0.1",
+    "stylelint": "^15.6.2",
+    "stylelint-config-standard": "^33.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
 }

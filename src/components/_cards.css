@@ -1,0 +1,169 @@
+/**
+ * FluidCSS - Cards
+ * Card component styles
+ */
+
+/* Base Card */
+.card {
+  background-color: var(--c-surface);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+/* Card Sections */
+.card-header {
+  padding: var(--space-4) var(--space-6);
+  border-bottom: var(--border-width-thin) solid var(--c-border);
+}
+
+.card-body {
+  padding: var(--space-6);
+}
+
+.card-footer {
+  padding: var(--space-4) var(--space-6);
+  border-top: var(--border-width-thin) solid var(--c-border);
+}
+
+/* Card Image */
+.card-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card-image-top {
+  border-top-left-radius: var(--border-radius-lg);
+  border-top-right-radius: var(--border-radius-lg);
+}
+
+.card-image-bottom {
+  border-bottom-left-radius: var(--border-radius-lg);
+  border-bottom-right-radius: var(--border-radius-lg);
+}
+
+/* Card Title */
+.card-title {
+  margin-bottom: var(--space-2);
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-semibold);
+  color: var(--c-text);
+}
+
+/* Card Subtitle */
+.card-subtitle {
+  margin-bottom: var(--space-4);
+  font-size: var(--fs-base);
+  color: var(--c-text-light);
+}
+
+/* Card Text */
+.card-text {
+  margin-bottom: var(--space-4);
+  color: var(--c-text);
+}
+
+.card-text:last-child {
+  margin-bottom: 0;
+}
+
+/* Card Variants */
+.card-primary {
+  border-top: var(--border-width-medium) solid var(--c-primary-500);
+}
+
+.card-secondary {
+  border-top: var(--border-width-medium) solid var(--c-secondary-500);
+}
+
+.card-accent {
+  border-top: var(--border-width-medium) solid var(--c-accent-500);
+}
+
+.card-success {
+  border-top: var(--border-width-medium) solid var(--c-success-500);
+}
+
+.card-warning {
+  border-top: var(--border-width-medium) solid var(--c-warning-500);
+}
+
+.card-error {
+  border-top: var(--border-width-medium) solid var(--c-error-500);
+}
+
+/* Card With Hover Effect */
+.card-hover {
+  transition: transform var(--transition-normal) var(--ease-default),
+              box-shadow var(--transition-normal) var(--ease-default);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Card Horizontal Layout */
+.card-horizontal {
+  display: flex;
+  flex-direction: row;
+}
+
+.card-horizontal .card-image {
+  width: 33.333%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card-horizontal .card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Card Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-6);
+}
+
+/* Card Link */
+.card-link {
+  color: var(--c-primary-600);
+  text-decoration: none;
+  font-weight: var(--fw-medium);
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}
+
+.card-link + .card-link {
+  margin-left: var(--space-4);
+}
+
+/* Card Overlay */
+.card-overlay {
+  position: relative;
+}
+
+.card-overlay .card-image {
+  width: 100%;
+}
+
+.card-overlay .card-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  color: white;
+}
+
+.card-overlay .card-title,
+.card-overlay .card-subtitle,
+.card-overlay .card-text {
+  color: white;
+}

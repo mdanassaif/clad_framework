@@ -1,0 +1,242 @@
+/**
+ * FluidCSS - Typography
+ * Typography utility classes
+ */
+
+/* Font Family */
+.font-body {
+  font-family: var(--f-body);
+}
+
+.font-heading {
+  font-family: var(--f-heading);
+}
+
+.font-mono {
+  font-family: var(--f-mono);
+}
+
+/* Font Size */
+.text-xs {
+  font-size: var(--fs-xs);
+}
+
+.text-sm {
+  font-size: var(--fs-sm);
+}
+
+.text-base {
+  font-size: var(--fs-base);
+}
+
+.text-lg {
+  font-size: var(--fs-lg);
+}
+
+.text-xl {
+  font-size: var(--fs-xl);
+}
+
+.text-2xl {
+  font-size: var(--fs-2xl);
+}
+
+.text-3xl {
+  font-size: var(--fs-3xl);
+}
+
+.text-4xl {
+  font-size: var(--fs-4xl);
+}
+
+.text-5xl {
+  font-size: var(--fs-5xl);
+}
+
+.text-6xl {
+  font-size: var(--fs-6xl);
+}
+
+.text-7xl {
+  font-size: var(--fs-7xl);
+}
+
+.text-8xl {
+  font-size: var(--fs-8xl);
+}
+
+.text-9xl {
+  font-size: var(--fs-9xl);
+}
+
+/* Font Weight */
+.font-light {
+  font-weight: var(--fw-light);
+}
+
+.font-normal {
+  font-weight: var(--fw-normal);
+}
+
+.font-medium {
+  font-weight: var(--fw-medium);
+}
+
+.font-semibold {
+  font-weight: var(--fw-semibold);
+}
+
+.font-bold {
+  font-weight: var(--fw-bold);
+}
+
+.font-extrabold {
+  font-weight: var(--fw-extrabold);
+}
+
+/* Line Height */
+.leading-none {
+  line-height: var(--lh-none);
+}
+
+.leading-tight {
+  line-height: var(--lh-tight);
+}
+
+.leading-snug {
+  line-height: var(--lh-snug);
+}
+
+.leading-normal {
+  line-height: var(--lh-normal);
+}
+
+.leading-relaxed {
+  line-height: var(--lh-relaxed);
+}
+
+.leading-loose {
+  line-height: var(--lh-loose);
+}
+
+/* Text Alignment */
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+/* Text Decoration */
+.underline {
+  text-decoration: underline;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+/* Text Transform */
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.normal-case {
+  text-transform: none;
+}
+
+/* Letter Spacing */
+.tracking-tighter {
+  letter-spacing: -0.05em;
+}
+
+.tracking-tight {
+  letter-spacing: -0.025em;
+}
+
+.tracking-normal {
+  letter-spacing: 0;
+}
+
+.tracking-wide {
+  letter-spacing: 0.025em;
+}
+
+.tracking-wider {
+  letter-spacing: 0.05em;
+}
+
+.tracking-widest {
+  letter-spacing: 0.1em;
+}
+
+/* Text Overflow */
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.overflow-ellipsis {
+  text-overflow: ellipsis;
+}
+
+.text-clip {
+  text-overflow: clip;
+}
+
+/* Whitespace */
+.whitespace-normal {
+  white-space: normal;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
+}
+
+.whitespace-pre {
+  white-space: pre;
+}
+
+.whitespace-pre-line {
+  white-space: pre-line;
+}
+
+.whitespace-pre-wrap {
+  white-space: pre-wrap;
+}
+
+/* Word Break */
+.break-normal {
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.break-words {
+  overflow-wrap: break-word;
+}
+
+.break-all {
+  word-break: break-all;
+}
